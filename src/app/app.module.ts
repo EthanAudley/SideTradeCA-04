@@ -10,6 +10,7 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ProductService } from './Services/products.service';
+import { CartListComponent } from './cart-list/cart-list.component'
 
 @NgModule({
   imports: [
@@ -17,8 +18,10 @@ import { ProductService } from './Services/products.service';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: "", component: ProductListComponent },
-      { path: 'products/:productId', component: ProductListComponent },
+      { path: '', component: ProductListComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart/', component: CartListComponent },
+      {},
     ])
   ],
   declarations: [
@@ -26,7 +29,8 @@ import { ProductService } from './Services/products.service';
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartListComponent
   ],
   providers: [ProductService],
   bootstrap: [ AppComponent ]
